@@ -3,18 +3,18 @@
 // define gloabl variables
 
 var oldCop = "Frank";
-	newCopy = "Max";
-	jsonData = json(); // replace with actual json code
+	newCop = "Max";
+	// jsonData = json(); // replace with actual json code
 	objLicenseInfo = {
-		"license" : [
-			"name" 		: "Jim Stewart",
-			"address" 	: "123 Oak Street",
-			"plate"		: 123456,
-			"vehicle"	: {
-				"make" 	: "Chevy",
-				"model" : "Colorado"
+		license: {
+			name 		: "Jim Stewart",
+			address 	: "123 Oak Street",
+			plate		: 123456,
+			vehicle		: {
+				make 	: "Chevy",
+				model	: "Colorado"
 			}
-		];
+		}
 			
 	};
 	
@@ -25,4 +25,7 @@ var oldCop = "Frank";
 
 // begin story elements
 
-console.log("As " + oldCop + " and " + newCop + " took off, " + newCop + " pulled out the list of possible suspects and went through them. He quickly rattled off the names, addresses, and the make and models of the possible vehicles.");
+console.log("As " + oldCop + " and " + newCop + " took off, " + newCop + " pulled out the list of possible suspects and went through them.");
+console.log("He quickly rattled off the names, addresses, and the make and models of the possible vehicles.");
+console.log(oldCop + " grabbed the one off the top and read the address aloud.");
+console.log("Let's go and see " + objLicenseInfo.license.name + " and see what they have to say.");
