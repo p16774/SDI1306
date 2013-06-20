@@ -17,7 +17,46 @@ var oldCop = "Frank";
 		return vehicleArray;
 		
 	} // end vehicle function
-
+	
+	// function for pulling today's date
+	todayDate = function() {
+		
+		var date = new Date();
+			today = date.getMonth() + 1 + "/" + date.getDate() + "/" + date.getFullYear();
+			
+		return today;
+		
+	};
+	
+	// function for validating license data
+	isValid = function(date, name) {
+		
+		var current = date;
+			userName = name;
+			
+			for(key in licenseInfo.license) {
+				
+				obj = licenseInfo.license[key];
+				
+				if (userName === obj.name) {
+					
+					if (current < obj.renewDate) {
+						
+						valid = false;
+						
+					} else {
+						
+						valid = true;
+						
+					}; // end nested conditional
+					
+				}; // end origianl if statement
+				
+			}; // end for in loop
+			
+			return valid;
+			
+	}; // end isValid function
 
 // begin story elements
 
@@ -74,3 +113,8 @@ console.log("Upon arriving they once again asked if they could ask a few questio
 
 console.log(vehicleData(2));
 
+currentDate = todayDate();
+
+test = isValid(currentDate, "Jim Stewart");
+
+console.log(test);
