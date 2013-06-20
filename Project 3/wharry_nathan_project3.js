@@ -19,14 +19,22 @@ for (var key in licenseInfo.license) {
 		
 	data = licenseInfo.license[key];
 	total = licenseInfo.license.length;
+	
+	// console.log(key);
+	
+	// if (key == 0) { console.log("done!"); }
 		
-	if (key < total-1) {
+	if (key === "0") {
 		
-		console.log("We have " + data.name + " located at " + data.address + ".");
+		console.log("We have " + data.name + " located at " + data.address + ",");
 		
-	} else {
+	} else if (key < (total-1) && key != "0") {
 		
-		console.log("And lastly we have " + data.name + " located at " + data.address + ".");
+		console.log("and " + data.name + " located at " + data.address + ",");
+		
+	} else if (key == (total-1)) {
+		
+		console.log("and lastly we have " + data.name + " located at " + data.address + ".");
 		
 	}
 	
