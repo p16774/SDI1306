@@ -14,7 +14,7 @@ var licenseInfo = {
 						"vin" : "23R4F67TR13889"
 					},
 				"renewDate" : "03/15/2014",
-				"isValid" : true
+				"registered" : true
 			},
 			{ 	"name" : "Jane Applegate",
 				"address" : "118 Freeway Dr",
@@ -26,7 +26,7 @@ var licenseInfo = {
 						"vin" : "26R3F12TR72113"
 					},
 				"renewDate" : "06/10/2013",
-				"isValid" : false
+				"registered" : false
 			},
 			{ 	"name" : "Mark Sealon",
 				"address" : "220A Newel Pkwy",
@@ -38,7 +38,7 @@ var licenseInfo = {
 						"vin" : "22R1F624TR21886"
 					},
 				"renewDate" : "01/23/2014",
-				"isValid" : true
+				"registered" : true
 			},
 			{ 	"name" : "Jennifer Valen",
 				"address" : "341 George Rd.",
@@ -50,7 +50,7 @@ var licenseInfo = {
 						"vin" : "29R7F92TR12003"
 					},
 				"renewDate" : "07/22/2013",
-				"isValid" : true
+				"registered" : true
 			},
 			{ 	"name" : "Braden Marcus",
 				"address" : "456 Nightling St.",
@@ -62,7 +62,7 @@ var licenseInfo = {
 						"vin" : "25R1F56TR13773"
 					},
 				"renewDate" : "08/02/2012",
-				"isValid" : false
+				"registered" : false
 			},
 			{ 	"name" : "Gina Gentry",
 				"address" : "23 North Park Ave. Apt A",
@@ -74,7 +74,7 @@ var licenseInfo = {
 						"vin" : "27R0F24TR82664"
 					},
 				"renewDate" : "11/20/2013",
-				"isValid" : true
+				"registered" : true
 			}
 		
 		] // end array

@@ -32,8 +32,6 @@ var oldCop = "Frank";
 				if (userName === obj.name) {
 					
 					objDate = new Date(obj.renewDate);
-					console.log(objDate + " renew Date.");
-					console.log(current + " current Date.");
 					
 					if (current > objDate) {
 						
@@ -52,6 +50,16 @@ var oldCop = "Frank";
 			return valid;
 			
 	}; // end isValid function
+	
+	// function to check how many people they have left to ask
+	getRemaining = function(number) {
+		
+		jsonObj = licenseInfo.license.length
+		totalLeft = jsonObj - number;
+		
+		return totalLeft;
+		
+	}; // end getRemaining function
 
 // begin story elements
 
@@ -109,7 +117,26 @@ console.log("Upon arriving they once again asked if they could ask a few questio
 carInfo = vehicleData(1);
 
 console.log("Ma'am, do you own a " + carInfo[2] + " " + carInfo[0] + " " + carInfo[1] + " with a VIN number of " + carInfo[3] + "?");
+console.log("\"Yes,\" the woman replied.");
 
-test = isValid(currentDate, "Jane Applegate");
+// check if her license is valid
+checkRenewDate = isValid(currentDate, "Jane Applegate");
 
-console.log(test);
+if (checkRenewDate === true) {
+	
+	console.log("Thank you for keeping the vehicle registered.");
+	
+} else {
+	
+	console.log("Did you know that the vehicle plates are expired?");
+	
+}; // end checkRenewDate conditional
+
+console.log("\"It was stolen last month so I never bothered to register the plates,\" she replied.");
+console.log("Frank looked at Max as they both nodded knowing just which vehicle that should be going after.");
+
+peopleRemaining = getRemaining(2);
+
+console.log("After that should we go and investigate the last " + peopleRemaining + " people left?");
+console.log("No, let's just get back to the precinct and get an A.P.B. out.");
+
