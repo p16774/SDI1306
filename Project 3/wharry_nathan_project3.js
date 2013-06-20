@@ -6,6 +6,7 @@ var oldCop = "Frank";
 	newCop = "Max";
 	investigateTime = 20;
 	isStolen = true;
+	currentDate = new Date();
 	
 	// function for pulling vehicle make and model for given license data name
 	vehicleData = function(userData) {
@@ -17,21 +18,11 @@ var oldCop = "Frank";
 		return vehicleArray;
 		
 	} // end vehicle function
-	
-	// function for pulling today's date
-	todayDate = function() {
 		
-		var date = new Date();
-			today = date.getMonth() + 1 + "/" + date.getDate() + "/" + date.getFullYear();
-			
-		return today;
-		
-	};
-	
 	// function for validating license data
 	isValid = function(date, name) {
 		
-		var current = date;
+		var current = new Date(date);
 			userName = name;
 			
 			for(key in licenseInfo.license) {
@@ -40,7 +31,11 @@ var oldCop = "Frank";
 				
 				if (userName === obj.name) {
 					
-					if (current < obj.renewDate) {
+					objDate = new Date(obj.renewDate);
+					console.log(objDate + " renew Date.");
+					console.log(current + " current Date.");
+					
+					if (current > objDate) {
 						
 						valid = false;
 						
@@ -111,10 +106,10 @@ console.log("Upon arriving they once again asked if they could ask a few questio
 
 // question and boolean values
 
-console.log(vehicleData(2));
+carInfo = vehicleData(1);
 
-currentDate = todayDate();
+console.log("Ma'am, do you own a " + carInfo[2] + " " + carInfo[0] + " " + carInfo[1] + " with a VIN number of " + carInfo[3] + "?");
 
-test = isValid(currentDate, "Jim Stewart");
+test = isValid(currentDate, "Jane Applegate");
 
 console.log(test);
