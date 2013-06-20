@@ -4,7 +4,7 @@
 
 var oldCop = "Frank";
 	newCop = "Max";
-	
+	investigateTime = 20;
 
 
 // begin story elements
@@ -36,12 +36,23 @@ for (var key in licenseInfo.license) {
 		
 		console.log("and lastly we have " + data.name + " located at " + data.address + ".");
 		
-	}
+	} // end conditional if/else statement
 	
-}
-
+} // end for in loop
 
 
 console.log(oldCop + " grabbed the one off the top and read the address aloud.");
-console.log("Let's go and see " + licenseInfo.license[2].name + " and see what they have to say.");
+console.log("\"Let's go and see " + licenseInfo.license[2].name + " and see what they have to say.\"");
+console.log("They left the precinct and quickly made their way to " + licenseInfo.license[2].address + ".");
+console.log("Knocking on the door they were met by a smartly dressed young man. \"Wondering if we could take " + investigateTime + " minutes of your time?");
 
+// start math while loop
+
+while(investigateTime > 0) {
+	
+	console.log(newCop + " checked his watched as they asked questions and saw they had " + investigateTime + " minutes left.");
+	investigateTime = investigateTime - 5;
+	
+} // end while math loop
+
+console.log("After questioning the suspect and finding he had an alibi, the officers picked another name at random and left to investigate.");
