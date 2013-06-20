@@ -5,6 +5,18 @@
 var oldCop = "Frank";
 	newCop = "Max";
 	investigateTime = 20;
+	isStolen = true;
+	
+	// function for pulling vehicle make and model for given license data name
+	vehicleData = function(userData) {
+		
+		key = userData;
+		object = licenseInfo.license[key].licenseData;
+		vehicleArray = [object.make, object.model, object.year, object.vin];
+		
+		return vehicleArray;
+		
+	} // end vehicle function
 
 
 // begin story elements
@@ -56,3 +68,9 @@ while(investigateTime > 0) {
 } // end while math loop
 
 console.log("After questioning the suspect and finding he had an alibi, the officers picked another name at random and left to investigate.");
+console.log("Upon arriving they once again asked if they could ask a few questions.");
+
+// question and boolean values
+
+console.log(vehicleData(2));
+
