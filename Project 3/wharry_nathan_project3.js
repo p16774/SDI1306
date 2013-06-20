@@ -11,6 +11,29 @@ var oldCop = "Frank";
 
 console.log("As " + oldCop + " and " + newCop + " took off, " + newCop + " pulled out the list of possible suspects and went through them.");
 console.log("He quickly rattled off the names, addresses, and the make and models of the possible vehicles.");
+console.log("We have the following locations.");
+
+// for in loop to name the people and locations from json data
+
+for (var key in licenseInfo.license) {
+		
+	data = licenseInfo.license[key];
+	total = licenseInfo.license.length;
+		
+	if (key < total-1) {
+		
+		console.log("We have " + data.name + " located at " + data.address + ".");
+		
+	} else {
+		
+		console.log("And lastly we have " + data.name + " located at " + data.address + ".");
+		
+	}
+	
+}
+
+
+
 console.log(oldCop + " grabbed the one off the top and read the address aloud.");
 console.log("Let's go and see " + licenseInfo.license[2].name + " and see what they have to say.");
 

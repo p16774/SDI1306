@@ -60,7 +60,7 @@ var licenseInfo = {
 				"renewDate" : "08/02/2013"
 			},
 			{ 	"name" : "Gina Gentry",
-				"address" : "23 North Park Apt. A",
+				"address" : "23 North Park Ave. Apt A",
 				"regDate" : "11/20/2012",
 				"licenseData" :
 					{ 	"make" : "Ford",
