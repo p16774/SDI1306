@@ -8,6 +8,40 @@ var oldCop = "Frank";
 	isStolen = true;
 	currentDate = new Date();
 	
+	// for in loop to name the people and locations from json data
+	
+	getSuspects = function() {
+		
+		for (var key in licenseInfo.license) {
+			
+		data = licenseInfo.license[key];
+		total = licenseInfo.license.length;
+		
+		// console.log(key);
+		
+			// if (key == 0) { console.log("done!"); }
+				
+			if (key === "0") {
+				
+				console.log("We have " + data.name + " located at " + data.address + ",");
+				
+			} else if (key < (total-1) && key != "0") {
+				
+				console.log("and " + data.name + " located at " + data.address + ",");
+				
+			} else if (key == (total-1)) {
+				
+				suspectInfo = ("and lastly we have " + data.name + " located at " + data.address + ".");
+				
+			}; // end conditional if/else statement
+					
+		}; // end for in loop
+		
+		return suspectInfo;
+		
+	}; // end getSuspects function
+	
+	
 	// function for pulling vehicle make and model for given license data name
 	vehicleData = function(userData) {
 		
@@ -67,33 +101,7 @@ console.log("As " + oldCop + " and " + newCop + " took off, " + newCop + " pulle
 console.log("He quickly rattled off the names, addresses, and the make and models of the possible vehicles.");
 console.log("We have the following locations.");
 
-// for in loop to name the people and locations from json data
-
-for (var key in licenseInfo.license) {
-		
-	data = licenseInfo.license[key];
-	total = licenseInfo.license.length;
-	
-	// console.log(key);
-	
-	// if (key == 0) { console.log("done!"); }
-		
-	if (key === "0") {
-		
-		console.log("We have " + data.name + " located at " + data.address + ",");
-		
-	} else if (key < (total-1) && key != "0") {
-		
-		console.log("and " + data.name + " located at " + data.address + ",");
-		
-	} else if (key == (total-1)) {
-		
-		console.log("and lastly we have " + data.name + " located at " + data.address + ".");
-		
-	} // end conditional if/else statement
-	
-} // end for in loop
-
+console.log(getSuspects());
 
 console.log(oldCop + " grabbed the one off the top and read the address aloud.");
 console.log("\"Let's go and see " + licenseInfo.license[2].name + " and see what they have to say.\"");
