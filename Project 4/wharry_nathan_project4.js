@@ -2,10 +2,10 @@
 
 // function for determining phone pattern
 
-checkPhoneNumber = function(string) {
+checkPhoneNumber = function(number) {
 	
 	// assign variables
-	var phoneNumber = string;
+	var phoneNumber = number;
 		firstNumber = 0;
 		secondNumber = 0;
 		fourthNumber = 0; // can't use thirdNumber - firebug throws an error with this variable every time
@@ -19,8 +19,10 @@ checkPhoneNumber = function(string) {
 			
 		} else {
 		
+			//check for dashes
 			divider = phoneNumber.indexOf("-")
 			
+			// validate if dashes were used
 			if(divider === -1) {
 				
 				if(phoneNumber.length != 10) {
@@ -97,3 +99,71 @@ checkPhoneNumber = function(string) {
 }; // end checkPhoneNumber function
 
 
+// check for valid email address
+
+checkEmail = function(email) {
+	
+	var emailAddress = email;
+		emailName = emailAddress.indexOf("@");
+		emailDomain = emailAddress.substr(emailName);
+		emailDot = emailAddress.lastIndexOf(".");
+		emailDotCom = emailAddress.substr(emailDot);
+		
+	// validate we have the necessary characters to split the function up
+	if (emailName === -1) {
+		
+		validEmail = false;
+		
+	} else {
+		
+		// check for valid . in email
+		if(emailDot === -1) {
+			
+			validEmail = false;
+			
+		} else {
+			
+			// check to make sure you aren't finding a dot before the @ symbol
+			if(emailDot < emailName) {
+				
+				validEmail = false;
+				
+			} else {
+				
+				// check for correct .com length
+				if(emailDotCom.length != 4) {
+					
+					validEmail = false;
+					
+				} else {
+					
+					// check to make sure we have a semi-valid domain
+					if(emailDomain.length < 6) {
+						
+						validEmail = false;
+						
+					} else {
+						
+						validEmail = true;
+						
+					}; // end valid domain check
+					
+				}; // end valid .com length
+				
+			}; // end dot before @ symbol check
+			
+		}; // end valid . check in email
+		
+	}; // end valid necessary character check on @ symbol
+	
+	return validEmail;	
+	
+}; // end the checkEmail function
+
+
+
+
+
+// testing values
+// console.log(checkPhoneNumber("123-456-7890"));
+console.log(checkEmail("nathan.wharry@a.com"));
