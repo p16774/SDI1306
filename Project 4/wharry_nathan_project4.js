@@ -161,9 +161,41 @@ checkEmail = function(email) {
 }; // end the checkEmail function
 
 
+// valid URL function check
+
+checkURL = function(address) {
+	
+	var webAddress = address;
+		regAddress = address.substr(0,7);
+		secureAddress = address.substr(0,8);
+		
+		// check regular address
+		if(regAddress === "http://") {
+			
+			validURL = true;
+			
+		} else {
+			
+			if(secureAddress === "https://") {
+				
+				validURL = true;
+				
+			} else {
+				
+				validURL = false;
+				
+			}; // end additional check for secure URL (https)
+			
+		}; // end check for valid URL (http)
+		
+		return validURL;
+	
+}; // end checkURL function
+
 
 
 
 // testing values
 // console.log(checkPhoneNumber("123-456-7890"));
-console.log(checkEmail("nathan.wharry@a.com"));
+//console.log(checkEmail("nathan.wharry@a.com"));
+//console.log(checkURL("http:/www.project3w.com"));
