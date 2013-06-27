@@ -240,6 +240,37 @@ checkDates = function(firstDate,secondDate,dataType) {
 }; // end the checkDates function
 
 
+// function to convert a number string into a valid "number" property
+
+checkNumber = function(number) {
+	
+	var convertNumber = number;
+		
+		// validate number
+		if (isNaN(convertNumber) === true) {
+			
+			console.log("This is not a valid number. Please re-enter and try again.");
+			return;
+			
+		} else {
+			
+			numConverted = Number(convertNumber);
+
+			// check that our number is actually a number value before returning
+			if (convertNumber === numConverted) {
+				
+				console.log("Number was not converted correctly.");
+				
+			}; // end validation check on status of "number"
+			
+		}; // end validation check on whether it's a valid string number to being conversion
+			
+		return numConverted;
+		
+}; // end the checkNumber function
+		
+
+
 
 
 // testing values
