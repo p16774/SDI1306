@@ -268,14 +268,43 @@ checkNumber = function(number) {
 		return numConverted;
 		
 }; // end the checkNumber function
+	
+
+// function to total an array of number types only
+addNumbers = function(array) {
+	
+	var addArray = array;
+		arrayTotal = 0;
+	
+	//loop through array and add as needed the number types
+	for (var i = 0; i < addArray.length; i++) {
 		
-
-
+		//validate number and add
+		checkForNumber = Number(addArray[i]);
+		
+		if(addArray[i] === checkForNumber) {
+			
+			// add our valid number
+			arrayTotal = arrayTotal + checkForNumber;
+			
+		} else {
+			
+			// do nothing since our value is not an array
+			
+		}; // end valid number check to add to array
+		
+	}; //end for loop
+	
+	return arrayTotal;
+	
+}; // end the addNumbers function
 
 
 // testing values
-// console.log(checkPhoneNumber("123-456-7890"));
+
+//console.log(checkPhoneNumber("123-456-7890"));
 //console.log(checkEmail("nathan.wharry@a.com"));
 //console.log(checkURL("http:/www.project3w.com"));
 //console.log(checkDates("06/01/13","06/30/13","HoUrS"));
 //console.log(checkNumber("3495"));
+//console.log(addNumbers([1,"2",3,5,"8",13,"pickles",true,"humbug"]));
