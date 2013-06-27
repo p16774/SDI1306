@@ -193,9 +193,58 @@ checkURL = function(address) {
 }; // end checkURL function
 
 
+// function to check the amount of time between two dates
+checkDates = function(firstDate,secondDate,dataType) {
+	
+	var startDate = new Date(firstDate);
+		finishDate = new Date(secondDate);
+		output = dataType.toLowerCase();
+		
+		
+		startDate = Math.abs(startDate.getTime());
+		finishDate = Math.abs(finishDate.getTime());
+		
+		// check to make sure that our Dates are valid numbers
+		if(isNaN(startDate) === true || isNaN(finishDate) === true) {
+			
+			console.log("Your dates are not valid. Please enter valid dates to evalute.");
+			return;
+			
+		} else {
+		
+			// function to evaluate the dates to get our proper amount before calculating format
+			totalAmount = Math.abs(finishDate - startDate);
+			totalAmount = (((totalAmount/1000)/60)/60);
+			
+			// determine hours or days
+			if(output === "hours") {
+				
+				return totalAmount;
+				
+			} else if(output === "days") {
+				
+				totalAmount = totalAmount/24;
+				return totalAmount;
+				
+			} else {
+				
+				console.log("You did not enter a valid output format. Please enter \"hours\" or \"days\"."); 
+				return;
+				
+			}; // end output format check
+			
+		}; // end valid date check
+		
+		return totalAmount;
+		
+}; // end the checkDates function
+
+
 
 
 // testing values
 // console.log(checkPhoneNumber("123-456-7890"));
 //console.log(checkEmail("nathan.wharry@a.com"));
 //console.log(checkURL("http:/www.project3w.com"));
+//console.log(checkDates("06/01/13","06/30/13","HoUrS"));
+//console.log(checkNumber("3495"));
