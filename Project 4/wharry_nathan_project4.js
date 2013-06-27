@@ -199,8 +199,9 @@ checkDates = function(firstDate,secondDate,dataType) {
 	var startDate = new Date(firstDate);
 		finishDate = new Date(secondDate);
 		output = dataType.toLowerCase();
+		totalAmount = 0;
 		
-		
+		// convert dates to a number for math calculation
 		startDate = Math.abs(startDate.getTime());
 		finishDate = Math.abs(finishDate.getTime());
 		
