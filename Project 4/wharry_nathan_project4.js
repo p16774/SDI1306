@@ -309,3 +309,45 @@ addNumbers = function(array) {
 //console.log(checkDates("06/01/13","06/30/13","HoUrS"));
 //console.log(checkNumber("3495"));
 //console.log(addNumbers([1,"2",3,5,"8",13,"pickles",true,"humbug"]));
+
+
+
+var needToBuy = ["beer", "fire wood", "matches", "tent", "more beer"];
+var suppliesWeHave = ["matches", "tent", "cooler", "ice", "flashlight", "swiss army knife"];
+
+
+for(i=0, j=needToBuy.length; i<j; i++) {
+
+	var doWeNeed = 0;
+	
+	for (q=0, n=suppliesWeHave.length; q<n; q++) {
+		
+		
+		if(needToBuy[i] === suppliesWeHave[q]) {
+			
+			doWeNeed++;
+			
+		} 
+				
+	}
+	//console.log(doWeNeed);
+
+	if(doWeNeed != 1) {
+			
+		console.log("We need to buy " + needToBuy[i]);
+		
+	}
+		
+}
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
